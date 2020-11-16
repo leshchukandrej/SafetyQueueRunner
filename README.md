@@ -1,5 +1,6 @@
 # SafetyQueueRunner
-This class is used for controlling queue execution. In case if you want to enqueue job later or in case you want to enqueue it safely, use this class.
+
+This class is used for controlling queue execution. In case if you want to enqueue job later or to enqueue it safely, use this class.
 
 Samples of using this class contains in SafetyQueueRunnerTest class.
 
@@ -15,6 +16,6 @@ Samples of using this class contains in SafetyQueueRunnerTest class.
 
 `scheduleProcessingRestJobs()` schedules excecution of previously added to a list queues;
 
-`clearRestJobs()` clear list of previously added queues.
+`clearRestJobs()` clears list of previously added queues.
 
-If it's possible it's better to use `processRestJobs()` or `scheduleProcessingRestJobs()` as later as possible to make it bulkify and not to stuck in limits of scheduling (**100 schedules per transaction**).
+It's better to use `processRestJobs()` or `scheduleProcessingRestJobs()` in the end of transaction/code execution to make it bulkify and not to stuck in limits of scheduling (**100 schedules per transaction**).
